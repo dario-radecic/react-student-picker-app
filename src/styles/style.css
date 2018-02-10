@@ -1,0 +1,269 @@
+/* VARIABLES */
+:root {
+  /* COLORS */
+  --color-white: #fff;
+  --color-green: #2ecc71;
+  --color-darker-green: #2aaa5f;
+  --color-red: #f03434;
+  --color-light-border: #d2d7d3;
+  --background-color: #f2f2f2;
+  --background-color-2: #e9e7e7;
+  
+  /* TEXT */
+  --color-text-primary: #333;
+  --color-text-secondary: #666;
+
+  /* FONT AND SPACING */
+  --xs-size: .8rem;
+  --s-size: 1.2rem;
+  --m-size: 1.6rem;
+  --ml-size: 2.4rem;
+  --l-size: 3.2rem;
+  --xl-size: 4.8rem;
+
+  /* TRANSITION */
+  --transition-default: .3s;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Montserrat, Helvetica, sans-serif;
+  font-size: var(--m-size);
+  background: var(--background-color);
+}
+
+.button {
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+.button:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px var(--color-darker-green);
+}
+
+
+/********** CENTER **********/
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 var(--m-size);
+}
+
+
+/********** HEADER **********/
+.header {
+  background: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--xl-size);
+}
+
+.header__title {
+  color: var(--color-text-primary);
+  font-size: var(--l-size);
+}
+
+.header__button {
+  background: transparent;
+  border: 3px solid var(--color-green);
+  border-radius: var(--xs-size);
+  color: var(--color-green);
+  font-weight: 600;
+  margin: var(--m-size);
+  padding: 0 var(--m-size);
+}
+
+.header__button:hover {
+  background: var(--color-green);
+  color: var(--color-white);
+  transition: var(--transition-default);
+}
+
+
+/********** PICK STUDENT **********/
+.action-button {
+  background: var(--color-green);
+  border: none;
+  border-radius: var(--xs-size);
+  color: var(--color-white);
+  font-size: var(--ml-size);
+  font-weight: 600;
+  margin-top: var(--xl-size);
+  padding: var(--m-size) 0;
+  width: 100%;
+}
+
+.action-button:disabled {
+  opacity: .5;
+}
+
+.action-button:hover {
+  background: var(--color-darker-green);
+  transition: var(--transition-default);
+}
+
+
+/********** WIDGET **********/
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--xl-size);
+}
+
+.widget-header__title {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+.button--remove-all-students {
+  background: transparent;
+  border: none;
+  color: var(--color-text-secondary);
+  padding: 0 var(--m-size);
+}
+
+.button--remove-all-students:hover {
+  background: var(--color-red);
+  border-radius: var(--xs-size);
+  color: var(--color-white);
+  font-weight: 500;
+  transition: var(--transition-default);
+}
+
+.button--remove-all-students:focus {
+  border-radius: var(--xs-size);
+}
+
+
+/********** INDIVIDUAL STUDENT **********/
+.student {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-light-border);
+  padding: var(--s-size);
+}
+
+.student:nth-child(odd) {
+  background: var(--background-color-2);
+}
+
+.student__text {
+  color: var(--color-text-primary);
+}
+
+.button--remove-student {
+  background: transparent;
+  border: 2px solid var(--color-red);
+  border-radius: 50%;
+  color: var(--color-red);
+  font-size: var(--s-size);
+  font-weight: 600;
+  height: var(--l-size);
+  margin-top: var(--xs-size);
+  width: var(--l-size);
+}
+
+.button--remove-student:hover {
+  background: var(--color-red);
+  color: var(--color-white);
+  transition: var(--transition-default);
+}
+
+
+/********* ADD STUDENT FORM **********/
+.add-student {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--m-size);
+}
+
+.add-student__input {
+  border: 1px solid var(--color-light-border);
+  color: var(--color-text-secondary);
+  flex-grow: 1;
+  margin-right: var(--s-size);
+  padding-left: var(--s-size);
+  text-transform: capitalize;
+}
+
+.add-student__input:focus {
+  outline: none !important;
+  box-shadow: 0 0 10px var(--color-darker-green);
+}
+
+.button--add-student {
+  background: var(--color-green);
+  border: none;
+  color: var(--color-white);
+  font-size: var(--m-size);
+  font-weight: 600;
+  padding: var(--m-size);
+}
+
+.button--add-student:hover {
+  background: var(--color-darker-green);
+  transition: var(--transition-default);
+}
+
+
+/********** MODAL **********/
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal {
+  background: var(--color-green);
+  color: var(--color-white);
+  max-width: 30rem;
+  outline: none;
+  padding: var(--l-size);
+  text-align: center;
+}
+
+.modal__title {
+  margin: 0 0 var(--m-size) 0;
+}
+
+.modal__body {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 var(--l-size) 0;
+  word-break: break-all;
+}
+
+.button--modal-button {
+  background: var(--color-white);
+  border: none;
+  border-radius: var(--xs-size);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  padding: var(--xs-size) var(--m-size);
+  text-transform: uppercase;
+}
+
+.button--modal-button:hover {
+  background: var(--color-light-border);
+  transition: var(--transition-default);
+}
